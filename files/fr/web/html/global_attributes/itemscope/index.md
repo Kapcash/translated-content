@@ -27,40 +27,47 @@ Un élément qui possède un attribut `itemscope` permet de définir un nouvel �
 
 ## Exemple
 
-Dans cet exemple, on a trois attributs `itemscopes`. Ces trois `itemscopes` définissent les portées respectives des `itemtypes` correspondants qui sont : Recipe, AggregateRating et NutritionInformation.
+Dans cet exemple, on a trois attributs `itemscopes`. Ces trois `itemscopes` définissent les portées respectives des `itemtypes` correspondants qui sont : _Recipe_ (Recette), _AggregateRating_ (Notes) et _NutritionInformation_ (Informations nutritionnelles).
 
 ### HTML
 
 ```html
-<div itemscope itemtype="https://schema.org/Recipe">
-<h2 itemprop="name">Grandma's Holiday Apple Pie</h2>
-<img itemprop="image" src="https://c1.staticflickr.com/1/30/42759561_8631e2f905_n.jpg" width="50" height="50"/>
-<p>By <span itemprop="author" itemscope itemtype="https://schema.org/Person">
-<span itemprop="name">Carol Smith</p></span>
-</span>
-<p>Published: <time datetime="2009-11-05" itemprop="datePublished">
-November 5, 2009</p></time>
-<span itemprop="description">This is my grandmother's apple pie recipe. I like to add a dash of nutmeg.<br></span>
- <span itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
- <span itemprop="ratingValue">4.0</span> stars based on <span itemprop="reviewCount">35</span> reviews<br></span>
-Prep time: <time datetime="PT30M" itemprop="prepTime">30 min<br></time>
- Cook time: <time datetime="PT1H" itemprop="cookTime">1 hour<br></time>
- Total time: <time datetime="PT1H30M" itemprop="totalTime">1 hour 30 min<br></time>
- Yield: <span itemprop="recipeYield">1 9" pie (8 servings)<br></span>
- <span itemprop="nutrition" itemscope itemtype="https://schema.org/NutritionInformation">
- Serving size: <span itemprop="servingSize">1 medium slice<br></span>
- Calories per serving: <span itemprop="calories">250 cal<br></span>
- Fat per serving: <span itemprop="fatContent">12 g<br></span>
-</span>
-<p>Ingredients:<br>
-  <span itemprop="recipeIngredient">Thinly-sliced apples: 6 cups<br></span>
-  <span itemprop="recipeIngredient">White sugar: 3/4 cup<br></span>
- ... </p>
-
-Directions: <br>
+<div itemscope itemtype="http://schema.org/Recipe">
+  <h2 itemprop="name">La tarte aux pommes de grand-mère pour les fêtes</h2>
+  <img itemprop="image" src="https://c1.staticflickr.com/1/30/42759561_8631e2f905_n.jpg" width="50" height="50" />
+  <p>
+    Par <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span itemprop="name">Carole Dupont</span>
+    </span>
+  </p>
+  <p>
+    Publié le : <time datetime="2009-11-05" itemprop="datePublished">5 Novembre 2009</time>
+  </p>
+  <span itemprop="description">C'est la recette de la tarte aux pommes de ma grand-mère. J'aime ajouter une pincée de noix de muscade.</span>
+  <br>
+  <span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+    <span itemprop="ratingValue">4.0</span> étoiles, basé sur <span itemprop="reviewCount">35</span> avis
+  </span>
+  <br>
+  Temps de préparation: <time datetime="PT30M" itemprop="prepTime">30min</time><br>
+  Temps de cuisson: <time datetime="PT1H" itemprop="cookTime">1h</time>r<br>
+  Temps total: <time datetime="PT1H30M" itemprop="totalTime">1h30min</time><br>
+  Yield: <span itemprop="recipeYield">1 tarte de 22cm (8 parts)</span><br>
+  <span itemprop="nutrition" itemscope itemtype="http://schema.org/NutritionInformation">
+    Taille de la portion : <span itemprop="servingSize">1 part moyenne</span><br>
+    Calories par portion: <span itemprop="calories">250cal</span><br>
+    Matières grasses par portion: <span itemprop="fatContent">12g</span><br>
+  </span>
+  <p>
+    Ingrédients:<br>
+    <span itemprop="recipeIngredient">Pommes coupées en fines tranches : environ 500g<br></span>
+    <span itemprop="recipeIngredient">Sucre blanc : 3 cuillères à café<br></span>
+    ...
+  </p>
+  Étapes: <br>
   <div itemprop="recipeInstructions">
-    1. Cut and peel apples<br>
-    2. Mix sugar and cinnamon. Use additional sugar for tart apples. <br>
+    1. Couper et éplucher les pommes<br>
+    2. Mélanger le sucre et la cannelle. Rajouter du sucre pour les pommes acidulées. <br>
     ...
   </div>
 </div>
@@ -78,7 +85,7 @@ Directions: <br>
     <tr>
       <td>itemprop</td>
       <td>name:</td>
-      <td>Grandma's Holiday Apple Pie</td>
+      <td>La tarte aux pommes de grand-mère</td>
     </tr>
     <tr>
       <td>itemprop</td>
@@ -94,8 +101,7 @@ Directions: <br>
       <td>itemprop</td>
       <td>description:</td>
       <td>
-        This is my grandmother's apple pie recipe. I like to add a dash of
-        nutmeg.
+        C'est la recette de la tarte aux pommes de ma grand-mère. J'aime ajouter une pincée de noix de muscade.
       </td>
     </tr>
     <tr>
@@ -116,24 +122,23 @@ Directions: <br>
     <tr>
       <td>itemprop</td>
       <td>recipeYield:</td>
-      <td>1 9" pie (8 servings)</td>
+      <td>1 tarte de 22cm (8 parts)</td>
     </tr>
     <tr>
       <td>itemprop</td>
       <td>recipeIngredient:</td>
-      <td>Thinly-sliced apples: 6 cups</td>
+      <td>Pommes coupées en fines tranches : environ 500g</td>
     </tr>
     <tr>
       <td>itemprop</td>
       <td>recipeIngredient:</td>
-      <td>White sugar: 3/4 cup</td>
+      <td>Sucre blanc: 6 cuillères à soupe</td>
     </tr>
     <tr>
       <td>itemprop</td>
       <td>recipeInstructions:</td>
       <td>
-        1. Cut and peel apples 2. Mix sugar and cinnamon. Use additional sugar
-        for tart apples .
+        1. Couper et éplucher les pommes 2. Mélanger le sucre et la cannelle. Rajouter du sucre pour les pommes acidulées.
       </td>
     </tr>
     <tr>
@@ -143,7 +148,7 @@ Directions: <br>
     <tr>
       <td>itemprop</td>
       <td>name:</td>
-      <td>Carol Smith</td>
+      <td>Carole Dupont</td>
     </tr>
     <tr>
       <td colspan="1" rowspan="3">itemscope</td>
@@ -168,17 +173,17 @@ Directions: <br>
     <tr>
       <td>itemprop</td>
       <td>servingSize:</td>
-      <td>1 medium slice</td>
+      <td>1 part moyenne</td>
     </tr>
     <tr>
       <td>itemprop</td>
       <td>calories:</td>
-      <td>250 cal</td>
+      <td>250cal</td>
     </tr>
     <tr>
       <td>itemprop</td>
       <td>fatContent:</td>
-      <td>12 g</td>
+      <td>12g</td>
     </tr>
   </tbody>
 </table>
